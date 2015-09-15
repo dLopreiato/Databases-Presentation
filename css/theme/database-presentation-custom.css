@@ -1,0 +1,19 @@
+.titled-portrait {
+    text-align: center;
+}
+
+.titled-portrait img {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.prologue-portraits {
+    width: 200px;
+    display: inline-block;
+}
+
+.centered-image {
+    width: 100%;
+    text-align: center;
+}
