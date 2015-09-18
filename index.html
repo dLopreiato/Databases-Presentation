@@ -182,18 +182,18 @@
         <!-- Reasons to use a database -->
         <section>
           <h2>
-            Why Do I Need a Database
+            Why You Might Need a Database
           </h2>
 
-          <p>
+          <p data-fragment-index="0" class="fragment">
+            A good interface for structured data
+          </p>
+
+          <p data-fragment-index="1" class="fragment">
             Finds data you want quickly
           </p>
 
-          <p>
-            It stores the data on the disk
-          </p>
-
-          <p>
+          <p data-fragment-index="2" class="fragment">
             Built to work over networks
           </p>
           <aside class="notes">
@@ -203,1065 +203,411 @@
               <li>"Why not just have a file that I write into memory and search myself?"</li>
               <li>Good for huge amounts of data. And databases are built and optimized by professionals for searching</li>
               <li>"So this is a great way to store questions! But what if I want to store user data?"</li>
-              <li>A centralized login thing needs to be on the network, but dont' worry! It's built for that.</li>
+              <li>A centralized login thing needs to be on the network, but don't worry! It's built for that.</li>
             </ul>
           </aside>
         </section>
 
 
-        <!-- Slide 5: Android Design Concepts -->
+        <!-- "What is a Database?" -->
         <section>
-          <h1>
-            Android Design
-          </h1>
-          <aside class="notes">
-            To get you familiar with the words and ideas of android so when you want to know how to do a thing, you know
-            what to put into the googles.
-          </aside>
-        </section>
-
-
-        <!-- Slide 6: Versioning -->
-        <section>
-
-          <!-- Slide 6a: Versions 3-10 -->
-          <section>
-            <h2>
-              Versioning 3 - 10
-            </h2>
-
-            <div class="android-version">
-              Cupcake
-              <br />
-              <small>
-                <span class="lowlight">Version:</span>1.5
-                <span class="lowlight">API:</span>3
-              </small>
-              <br />
-              <img data-src="media/version_cupcake.png" alt="cupcake">
+          <div class="centered-image">
+            <div class="titled-portrait" style="width: 200px; margin: auto;">
+              <img data-src="media/Debbie-Portrait.svg" alt="Y">
+              <small>Walt Isa</small>
             </div>
-
-            <div class="android-version">
-              Donut
-              <br />
-              <small>
-                <span class="lowlight">Version:</span>1.6
-                <span class="lowlight">API:</span>4
-              </small>
-              <br />
-              <img data-src="media/version_donut.png" alt="donut">
-            </div>
-
-            <div class="android-version">
-              Eclair
-              <br />
-              <small>
-                <span class="lowlight">Version:</span>2.0
-                <span class="lowlight">API:</span>5-7
-              </small>
-              <br />
-              <img data-src="media/version_eclair.png" alt="eclair">
-            </div>
-
-            <div class="android-version">
-              Froyo
-              <br />
-              <small>
-                <span class="lowlight">Version:</span>2.2
-                <span class="lowlight">API:</span>8
-              </small>
-              <br />
-              <img data-src="media/version_froyo.png" alt="froyo">
-            </div>
-
-            <div class="android-version">
-              Gingerbread
-              <br />
-              <small>
-                <span class="lowlight">Version:</span>2.3
-                <span class="lowlight">API:</span>9-10
-              </small>
-              <br />
-              <img data-src="media/version_gingerbread.png" alt="gingerbread">
-            </div>
-            <!-- The key take away here is the letter based names, and the integer api numbers. -->
-          </section>
-
-          <!-- Slide 6b: Versions 11-21 -->
-          <section>
-            <h2>
-              Versioning 11 - 21
-            </h2>
-
-            <div class="android-version">
-              Honeycomb
-              <br />
-              <small>
-                <span class="lowlight">Version:</span>3.0
-                <span class="lowlight">API:</span>11-13
-              </small>
-              <br />
-              <img data-src="media/version_honeycomb.png" alt="honeycomb">
-            </div>
-
-            <div class="android-version">
-              Ice Cream<br /> Sandwich
-              <br />
-              <small>
-                <span class="lowlight">Version:</span>4.0
-                <span class="lowlight">API:</span>14-15
-              </small>
-              <br />
-              <img data-src="media/version_icecreamsandwich.png" alt="icecreamsandwich">
-            </div>
-
-            <div class="android-version">
-              Jelly Bean
-              <br />
-              <small>
-                <span class="lowlight">Version:</span>4.1
-                <span class="lowlight">API:</span>16-18
-              </small>
-              <br />
-              <img data-src="media/version_jellybean.png" alt="jellybean">
-            </div>
-
-            <div class="android-version">
-              KitKat
-              <br />
-              <small>
-                <span class="lowlight">Version:</span>4.4
-                <span class="lowlight">API:</span>19-20
-              </small>
-              <br />
-              <img data-src="media/version_kitkat.png" alt="kitkat">
-            </div>
-
-            <div class="android-version">
-              Lollipop
-              <br />
-              <small>
-                <span class="lowlight">Version:</span>5.0
-                <span class="lowlight">API:</span>21
-              </small>
-              <br />
-              <img data-src="media/version_lollipop.png" alt="lollipop">
-            </div>
-          </section>
-
-        </section>
-
-
-        <!-- Slide 7: Recurring Visual Design -->
-        <section>
-
-          <!-- Slide 7a: Visual Design -->
-          <section>
-            <h1>
-              Interactive Design Elements
-            </h1>
-            <aside class="notes">
-              Some of the things a user can interact with in an app
-            </aside>
-          </section>
-
-          <!-- Vertical Slide 7b: Notification -->
-          <section>
-            <h2>
-              Notification
-            </h2>
-            <img height="400" data-src="media/example_notification0.png" alt="home screen notification example"
-              data-fragment-index="0" class="fragment">
-            <img height="400" data-src="media/example_notification1.png" alt="notification tray example"
-              data-fragment-index="1" class="fragment">
-          </section>
-
-          <!-- Vertical Slide 7c: Dialog -->
-          <section>
-            <h2>
-              Dialog
-            </h2>
-            <img class="stretch" data-src="media/example_dialog.png" alt="dialog example">
-          </section>
-
-          <!-- Vertical Slide 7d: Toasts -->
-          <section>
-            <h2>
-              Toasts
-            </h2>
-
-            <!-- Screenshot of Generic toast (connecting to a wifi network?) -->
-            <img class="stretch" data-src="media/example_toast.png" alt="toast example">
-          </section>
-
-          <!-- Vertical Slide 7e: Widgets -->
-          <section>
-            <h2>
-              Widgets
-            </h2>
-            <img class="stretch" data-src="media/example_widget.png" alt="widget example">
-          </section>
-
-          <!-- Vertical Slide 7f: Standard Input -->
-          <section>
-            <h2>
-              Buttons
-            </h2>
-            <img class="stretch" data-src="media/example_button.png" alt="button example">
-          </section>
-
-          <!-- Vertical Slide 7g: Standard Input -->
-          <section>
-            <h2>
-              Text Field
-            </h2>
-            <img class="stretch" data-src="media/example_textfield.png" alt="textfield example">
-          </section>
-
-          <!-- Vertical Slide 7h: Standard Input -->
-          <section>
-            <h2>
-              Checkbox
-            </h2>
-            <img class="stretch" data-src="media/example_checkbox.png" alt="checkbox example">
-          </section>
-
-          <!-- Vertical Slide 7i: Standard Input -->
-          <section>
-            <h2>
-              Radio Button
-            </h2>
-            <img class="stretch" data-src="media/example_radio.png" alt="radio example">
-          </section>
-
-          <!-- Vertical Slide 7j: Standard Input -->
-          <section>
-            <h2>
-              Toggle Button
-            </h2>
-            <img class="stretch" data-src="media/example_toggle_holodark.png" alt="toggle button example">
-          </section>
-
-          <!-- Vertical Slide 7k: Standard Input -->
-          <section>
-            <h2>
-              Spinner
-            </h2>
-            <img class="stretch" data-src="media/example_spinner.png" alt="spinner example">
-          </section>
-
-          <!-- Vertical Slide 7l: Standard Input -->
-          <section>
-            <h2>
-              Picker
-            </h2>
-            <img class="stretch" data-src="media/example_picker.png" alt="picker example">
-          </section>
-
-        </section>
-
-
-        <!-- Slide 8: Structural Design -->
-        <section>
-          <!-- Slide 8a: Title -->
-          <section>
-            <h1>
-              Structural Design Elements
-            </h1>
-            <aside class="notes">
-              Some of the things that structure an app.
-            </aside>
-          </section>
-
-          <!-- Slide 8b: Action Bar -->
-          <section>
-            <h2>
-              Action Bar
-            </h2>
-            <video loop data-autoplay class="stretch">
-              <source data-src="media/example_actionbar.webm" />
-            </video>
-          </section>
-
-          <!-- Slide 8c: Navigation Drawer -->
-          <section>
-            <h2>
-              Navigation Drawer
-            </h2>
-            <video loop data-autoplay class="stretch">
-              <source data-src="media/example_navdrawer.webm" />
-            </video>
-          </section>
-
-          <!-- Slide 8d: Tabs -->
-          <section>
-            <h2>
-              Tabs
-            </h2>
-            <video loop data-autoplay class="stretch">
-              <source data-src="media/example_tabs.webm" />
-            </video>
-          </section>
-
-          <!-- Slide 8e: Lists -->
-          <section>
-            <h2>
-              Lists
-            </h2>
-            <img class="stretch" data-src="media/android_in_use.png" alt="lists">
-          </section>
-
-          <!-- Slide 8f: Scrolling -->
-          <section>
-            <h2>
-              Scrolling
-            </h2>
-            <video loop data-autoplay class="stretch">
-              <source data-src="media/example_scrolling.webm" />
-            </video>
-          </section>
-
-          <!-- Slide 8g: Options -->
-          <section>
-            <h2>
-              Options Menu
-            </h2>
-            <video loop data-autoplay class="stretch">
-              <source data-src="media/example_options.webm" />
-            </video>
-            <aside class="notes">
-              Changed on Android 3.0
-            </aside>
-          </section>
-
-          <!-- Slide 8h: Overview Screen -->
-          <section>
-            <h2>
-              Overview Screen
-            </h2>
-            <!-- Not really structural design, but this is the best place I could fit this. -->
-            <img class="stretch" data-src="media/example_overview.png" alt="overview screen">
-          </section>
-        </section>
-
-
-        <!-- Slide 9: Android Theming -->
-        <section>
-          <h2>
-            Themes
-          </h2>
-          <img height="400" data-src="media/example_originaltheme.png" alt="original theme"
-            data-fragment-index="0" class="fragment">
-          <img height="400" data-src="media/example_toggle_holodark.png" alt="holodark theme"
-            data-fragment-index="1" class="fragment">
-          <img height="400" data-src="media/example_material.png" alt="material theme"
-            data-fragment-index="2" class="fragment">
-          <img height="400" data-src="media/example_devicedefault.png" alt="material theme"
-            data-fragment-index="3" class="fragment">
-        </section>
-
-
-        <!-- Slide 10: Additional Features -->
-        <section>
-          <h2>
-            Somewhat Unkown/Unused Features
-          </h2>
-          <p style="margin-top:100px;" data-fragment-index="0" class="fragment">
-            NFC (Near Field Communication)
-          </p>
-
-          <p style="margin-top:100px;" data-fragment-index="1" class="fragment">
-            Wi-Fi Peer-to-Peer
-          </p>
-        </section>
-
-        <!-- Slide 11: Android Application Architecture -->
-        <section>
-          <h1>
-            Android Application Architecture
-          </h1>
-        </section>
-
-        <!-- Slide 12: Activity -->
-        <section>
-          <h2>
-            Activity
-          </h2>
-          <p>
-            Provides a screen with which users can interact in order to do something
-          </p>
-          <!-- This example shows the user going between 2 different activities. -->
-          <video loop data-autoplay class="stretch" data-fragment-index="0" class="fragment">
-            <source data-src="media/example_actionbar.webm" />
-          </video>
-          <aside class="notes">
-            An application usually has multiple of these, but only 1 "main" activity. Each one is placed on the
-            "back stack". Each one should be designed around a specific kind of action.
-          </aside>
-        </section>
-
-        <!-- Slide 13: Task -->
-        <section>
-          <h2>
-            Task
-          </h2>
-          <p>
-            Collection of Activities
-            <br />
-            Saved Back Stack
-          </p>
-          <img class="stretch" data-src="media/example_overview.png" alt="overview screen">
-          <aside class="notes">
-            Home button doesn't destroy backstack. Resume a task with the "Overview Screen". Task is not an app.
-          </aside>
-        </section>
-
-        <!-- Slide 14: Intent -->
-        <section>
-
-          <!-- Slide 14a: Definition -->
-          <section>
-            <h2 style="margin-bottom: 75px;">
-              Intent
-            </h2>
-            <p>
-              Start an Activity
-            </p>
-            <p>
-              Start a Service
-            </p>
-            <p>
-              Broadcast a Message
-            </p>
-            <aside class="notes">
-              This is how you can navigate around your own app. Might be thinking: "create intent to start my own
-              activity? too much work. I'll just clear the screen and redraw what I want." Bad coding (no modules),
-              breaks Android UX. (Also, good luck dealing with multiple screen sizes)
-              <br />
-              Every app receives a broadcast. Example messages: system boot up, device charging, timezone change.
-            </aside>
-          </section>
-
-          <!-- Slide 14b: Components -->
-          <section>
-            <h3>
-              Components of an Intent
-            </h3>
-            <p>
-              <ul>
-                <li>Component Name (Optional)</li>
-                <li>Category</li>
-                <li>Action</li>
-                <li>Data</li>
-                <li>Extras</li>
-                <li>Flags</li>
-              </ul>
-            </p>
-            <aside class="notes">
-              Real power of Intents lays here.
-              <ul>
-                <li>Specifying a component name makes the intent explicit.</li>
-                <li>Category defines what type of app can open it. (Gallery, Maps, Market, Contacts, email).</li>
-                <li>Action defines the exact thing the activity should do when it receives it. (View, send, edit)</li>
-                <li>Data is a URI that references the data the action is occurring to.</li>
-                <li>Extras is how you pass data long.</li>
-                <li>Flags do stuff specific to how the OS should handle it.</li>
-              </ul>
-            </aside>
-          </section>
-        </section>
-
-        <!-- Slide 15: Services -->
-        <section>
-          <h2 style="margin-bottom:75px;">
-            Services
-          </h2>
-          <p>
-            Does background processing
-          </p>
-          <p data-fragment-index="0" class="fragment">
-            Music Playing
-            <br />
-            Network Transactions
-          </p>
-          <aside class="notes">
-            Works in the shadows. Can be bound (acting like server/client), or work indefinitely.
-          </aside>
-        </section>
-
-
-        <!-- Slide 16: The Lifecycle -->
-        <section>
-          <!-- Slide 16a: Lifecycle without Explanation -->
-          <section>
-            <h2>
-              Android Lifecycle
-            </h2>
-            <img class="stretch" data-src="media/lifecycle.png" alt="android lifecycle">
-          </section>
-
-          <!-- Slide 16b: Lifecycle with Explanation -->
-          <section>
-            <h2>
-              Android Lifecycle
-            </h2>
-            <img class="stretch" data-src="media/lifecycle_situations.png" alt="android lifecycle with explanation">
-          </section>
-        </section>
-
-
-        <!-- Slide 17: Your IDE -->
-        <section>
-          <h1>
-            Making Your First App
-          </h1>
-        </section>
-
-        <!-- Slide 18: Getting the IDE -->
-        <section>
-          <h2>
-            <a href="http://developer.android.com/training/basics/firstapp/index.html">Android Studio</a>
-          </h2>
-          <!-- Don't forget to download java! -->
-          <img class="stretch" data-src="media/ide_download.png" alt="ide download page">
-          <aside class="notes">
-            Keep in mind: Where you installed Java, where you installed the SDKs.
-            <br />
-            Runs off of IntelliJ Idea
-          </aside>
-        </section>
-
-        <!-- Slide 19: Starting the IDE -->
-        <section>
-          <h2>
-            Your Phone
-          </h2>
-          <img height="350" data-src="media/dev_settings.png" alt="phone settings"
-            data-fragment-index="0" class="fragment">
-          <img height="350" data-src="media/dev_about.png" alt="about phone"
-            data-fragment-index="1" class="fragment">
-          <img height="350" data-src="media/dev_2steps.png" alt="tapping build number"
-            data-fragment-index="2" class="fragment">
-          <img height="350" data-src="media/dev_developer.png" alt="your a developer! good work!"
-            data-fragment-index="3" class="fragment">
-          <img height="350" data-src="media/dev_settings_devoptions.png" alt="here are the dev options"
-            data-fragment-index="4" class="fragment">
-          <aside class="notes">
-            Building to your phone is faster and more realistic than building to an emulator.
-          </aside>
-        </section>
-
-
-        <!-- Slide 20: App Configuration -->
-        <section>
-          <!-- Slide 20a: Start Screen -->
-          <section>
-            <img class="stretch" data-src="media/ide_startscreen.png" alt="android studio start screen">
-            <aside class="notes">
-              Application name is the name of your app. Company Domain is what package it falls under. Doesn't need to
-              actually go to a domain.
-            </aside>
-          </section>
-
-          <!-- Slide 20b: New Project -->
-          <section>
-            <img class="stretch" data-src="media/ide_new_project.png" alt="android studio new project">
-          </section>
-
-          <!-- Slide 20c: Minimum SDK -->
-          <section>
-            <img class="stretch" data-src="media/ide_minimum_sdk.png" alt="android studio minimum sdk">
-          </section>
-
-          <!-- Slide 20d: Start Activity -->
-          <section>
-            <img class="stretch" data-src="media/ide_start_activity.png" alt="android studio start activity">
-          </section>
-
-          <!-- Slide 20e: Activity Options -->
-          <section>
-            <img class="stretch" data-src="media/ide_activity_options.png" alt="android studio activity options">
-            <aside class="notes">
-              The only user seen thing here is the Title, which shows up on the action bar.
-            </aside>
-          </section>
-        </section>
-
-
-        <!-- Slide 21: XML Tutorial -->
-        <section data-background-color="#e69138">
-          <h2>
-            XML
-          </h2>
-          <div data-fragment-index="0" class="fragment">
-            Describes data
-            <br />
-            <small>Really Inefficiently and Unreliably</small>
           </div>
-          <div data-fragment-index="1" class="fragment">
-            <pre class="xml stretch">
-<code>&lt;stuff_i_hate&gt;
-  &lt;thing&gt;
-    &lt;name&gt;Pitbull&lt;/name&gt;
-    &lt;description&gt;
-      For writing the lyrics "Or should I say, I saw, I conquered, I came"
-    &lt;/description&gt;
-  &lt;/thing&gt;
-  &lt;thing&gt;
-    &lt;name&gt;XML&lt;/name&gt;
-    &lt;description&gt;
-      Extremely lengthy, could have used quotation marks but NOOOOOO that&#39;d be too convenient.
-    &lt;/description&gt;
-  &lt;/thing&gt;
-  &lt;thing&gt;
-    &lt;name&gt;West Cookies&lt;/name&gt;
-    &lt;description&gt;
-      Under-cooked Cookies != Good Cookies
-    &lt;/description&gt;
-  &lt;/thing&gt;
-&lt;/stuff_i_hate&gt;
-</code>
-            </pre>
-          </div>
-        </section>
+          
+          <h2 data-fragment-index="0" class="fragment">"Walt Isa database?"</h2>
 
-        <!-- Slide 22: Creating your GUI -->
-        <section>
-          <h1>
-            Creating your GUI
-          </h1>
-        </section>
-
-
-        <!-- Slide 23: Layouts and Views -->
-        <section>
-          <h2>
-            Layouts &amp; Views
-          </h2>
-          <img class="stretch" data-src="media/layout_texteditor.png" alt="layout xml editor">
           <aside class="notes">
-            Android uses views as its method of describing how something should look.
-            <br />
-            Every activity gets its own Layout.
-            <br />
-            Can create sub-views and custom views.
+            Debbie knows she needs one, but doesn't know what it is
           </aside>
         </section>
 
-
-        <!-- Slide 24: Why XML? -->
+        <!-- What a database is -->
         <section>
-          <!-- No seriously, JSON exists too. And I'm SURE someone's found a way to describe hierarchy with it. -->
           <h2>
-            Why God, Why <span style="color: #e69138;">XML</span>?!
+            What a Database Is
           </h2>
-          <p data-fragment-index="0" class="fragment">
-            Well defined and can describe both hierarchy <strong>and</strong> properties
+
+          <p>
+            In essence, a database is a file with different interface.
           </p>
-          <p data-fragment-index="1" class="fragment">
-            Separation of View and Model
-          </p>
-          <p data-fragment-index="2" class="fragment">
-            Configurability
-          </p>
-          <aside class="notes">
-            Not only is separation of view and model good programming, its also necessary when android is as diverse of
-            a platform as it is.
-          </aside>
-        </section>
-
-
-        <!-- Slide 25: Types of Layouts -->
-        <section>
-          <h2>
-            Types of Layouts
-          </h2>
-          <ul>
-            <li>Frame</li>
-            <li>Linear</li>
-            <li>Table</li>
-            <li>Grid</li>
-            <li>Relative</li>
-          </ul>
-          <aside class="notes">
-            Frame essentially centers. Linear has horizontal and vertical. Grid can specify row column width. Relative
-            is most versatile.
-          </aside>
-          <!-- Perhaps add a screenshot of the widgets list to the left/right -->
-        </section>
-
-
-        <!-- Slide 26: Widgets -->
-        <section>
-          <h2>
-            Common Widgets
-          </h2>
-          <ul>
-            <li>TextView</li>
-            <li>EditText</li>
-            <li><i>Most Aforementioned Components</i></li>
-          </ul>
-          <!-- Perhaps add a screenshot of the widgets list to the left/right -->
-        </section>
-
-
-        <!-- Slide 27: Building a Layout -->
-        <section>
-          <h2>
-            Building a Layout
-          </h2>
-          <img class="stretch" data-src="media/layout_builder.png" alt="layout graphical editor">
-          <aside class="notes">
-            Drag and Drop widgets around. Don't quite worry about what everything says yet.
-          </aside>
-        </section>
-
-
-        <!-- Slide 28: Component Properties -->
-        <section>
-          <h2>
-            Component Properties
-          </h2>
-          <ul>
-            <li>Width &amp; Height</li>
-            <li>Padding</li>
-            <li>Background/Object Colors</li>
-            <li>ID</li>
-          </ul>
-          <!-- Perhaps add a screenshot of the properites menu to the left/right -->
-          <aside class="notes">
-            But notice these properties don't allow for GREAT diversity of screen sizes.
-          </aside>
-        </section>
-
-        <!-- If I have time, I might want to add the recreation of popular apps' structure here -->
-
-
-        <!-- Slide 29: Getting your app to do stuff -->
-        <section>
-          <h1>
-            Getting your app to do stuff
-          </h1>
-          <h2 class="fragment" data-fragment-index="0">
-            <span class="highlight">Like take input, and give output</span>
-          </h2>
-          <h3 class="fragment" data-fragment-index="1">
-            <span class="lowlight">And possibly even process data, and talk to the network</span>
-          </h3>
-          <aside class="notes">
-            And that's really it for GUIs
-          </aside>
         </section>
         
-
-        <!-- Slide 30: Activity Code -->
+        <!-- Attributes Comparison -->
         <section>
-
-          <!-- Slide 30a: Activity Code -->
-          <section>
-            <h2>
-              The Activity Code
-            </h2>
-            <!-- This is the code you get when you create a new activity -->
-            <pre class="java stretch">
-<code>public class MainACMActivity extends ActionBarActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_acm);
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main_acm, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-}
-              </code>
-            </pre>
-            <aside class="notes">
-              This is where you put all the code for your app. Note the Lifecycle function calls, and what it extends.
-              Important that not all of your code goes here. You can make your own classes, and pass them around.
-            </aside>
-          </section>
-
-          <!-- Slide 30b: Lifecyle Reference -->
-          <section>
-            <img class="stretch" data-src="media/lifecycle.png" alt="android lifecycle">
-          </section>
-
-          <!-- Slide 30c: Examples of the on onStop function -->
-          <section>
-            <h2>
-              Implementing a Lifecycle Function
-            </h2>
-            <pre class="java">
-<code>@Override
-public void onStop() {
-    super.onStop();
-
-    System.out.println("Hammer time");
-}
-              </code>
-            </pre>
-          </section>
-        </section>
-
-
-        <!-- Slide 31: Resource Referencing -->
-        <section>
-          <!-- Slide 31a: The folder -->
-          <section>
-            <h2>
-              Resource Referencing : The Folder
-            </h2>
-            <img class="stretch" data-src="media/resource_expanded.png" alt="res folder completely expanded">
-            <aside class="notes">
-              <ul>
-                <li>Strings is for localization</li>
-                <li>Drawables is for high/low resolution</li>
-                <li>Styles is for reusing catering to different device styles</li>
-                <li>Layouts is for Orientation/Screen size</li>
-              </ul>
-              Power for Cross platforming
-            </aside>
-          </section>
-
-          <!-- Slide 31b: The code -->
-          <section>
-            <h2>
-              Resource Referencing: The Code
-            </h2>
-            <pre class="java">
-  <code>userNameField = (EditText) findViewById(R.id.userName);
-              </code>
-            </pre>
-            <pre class="java fragment" data-fragment-index="0">
-  <code>userNameField.getText().toString();
-              </code>
-            </pre>
-            <!-- Edit Text Source: http://developer.android.com/reference/android/widget/EditText.html -->
-            <aside class="notes">
-              This is where I'll leave you to do your own looking up the documentation because its a good skill and also I
-              can't go over everything in 1 night.
-            </aside>
-          </section>
-      </section>
-
-
-        <!-- Slide 32: Storage Methods -->
-        <section>
-          <!-- Source: http://developer.android.com/guide/topics/data/data-storage.html -->
-          
-          <!-- Slide 32a: Data Storage -->
-          <section>
-            <h1>
-              Data Storage
-            </h1>
-            <aside class="notes">
-              Chances are you'll want to make something last over a usage period.
-            </aside>
-          </section>
-
-          <!-- Slide 32b: Shared Preferences -->
-          <section>
-            <h2>
-              Shared Preferences
-            </h2>
-            <pre class="java">
-<code>public static final String PREFERENCE_FILE = "MyPrefsFile";</code>
-            </pre>
-            <pre class="java fragment" data-fragment-index="0">
-<code>int toYourAddress = distanceCalculator(...);
-
-SharedPreferences settings = getSharedPreferences(PREFERENCE_FILE, 0);
-SharedPreferences.Editor prefEditor = settings.edit();
-prefEditor.putInt("toYA", toYourAddress);</code>
-            </pre>
-            <pre class="java fragment" data-fragment-index="1">
-<code>SharedPreferences uptownFunk = getSharedPreferences(PREFERENCE_FILE, 0);
-int distanceToYourAddress = uptownFunk.getInt("toYA", DEFAULT_INT);
-// Don't beleive me? Just watch.</code>
-            </pre>
-            <aside class="notes">
-              Boolean, Float, Int, Long, String, String Set
-              <br />
-              getSharedPreferences() comes from a context (your activity)
-              <br />
-              Good for user preferences. Is shared within a context.
-              <br />
-              "Uptown Funk gon give int toYa"
-            </aside>
-          </section>
-
-          <!-- Slide 32c: External Storage -->
-          <section>
-            <h2>
-              Internal/External Storage
-            </h2>
-            <pre class="java">
-<code>FileOutputStream fileStream =
-    openFileOutput(FILENAME, Context.MODE_PRIVATE);
-fileStream.write(data.getBytes());
-fileStream.close();</code>
-            </pre>
-            <pre class="java">
-<code>FileInputStream fileStream =
-    openFileInput(FILENAME, Context.MODE_PRIVATE);
-something = fileStream.read();
-fileStream.close();</code>
-            </pre>
-            <pre class="java fragment" data-fragment-index="0">
-<code>new File(
-    getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
-    "myPicture.png");</code>
-            </pre>
-            <aside class="notes">
-              Internal: Works just like JavaIO. Only accessible to you. Not even user when USB plugged in.
-              <br />
-              External: Requires permission WRITE_EXTERNAL_STORAGE. Can write to SD or just onboard memory.
-              Point is: its public.
-            </aside>
-          </section>
-
-          <!-- Slide 32d: Database -->
-          <section>
-            <h2>
-              Database
-            </h2>
-            <img class="stretch" data-src="media/SQLite.png" alt="SQLite Logo">
+          <div class="two-column">
             <p>
-              Knowledge Required: SQL
+              <h3>File</h3>
+              <ul data-fragment-index="0" class="fragment">
+                <li>Read, Write, Seek</li>
+                <li>Character/Line Granularity</li>
+                <li>No Pre-defined Structure</li>
+              </ul>
             </p>
-            <aside class="notes">
-              Good for large amounts of data that can easily be held in a table. Would recommend for locally caching
-              large lists.
-            </aside>
+          </div>
+          <div class="two-column">
+            <p>
+              <h3>Database</h3>
+              <ul data-fragment-index="1" class="fragment">
+                <li>Create, Read, Update, Delete</li>
+                <li>Datatype Granularity</li>
+                <li>Row Column Structure</li>
+              </ul>
+            </p>
+          </div>
+        </section>
+
+        <!-- Object Definition/Broomball  -->
+        <section>
+          <section>
+            <h2>Consider This Object</h2>
+
+            <pre><code data-trim>
+class AcmMember {
+    string Name;
+    Date GraduationDate;
+    int MeetingsAttended;
+    BihemisphericDecaoctant BroomballPosition;
+}
+            </code></pre>
           </section>
 
-          <!-- Slide 32e: Network -->
+          <section>
+            <h1>GAME PLAN</h1>
+            <p>
+              See Chalk Board.
+            </p>
+          </section>
+
+          <section>
+            <h1>OCTOBER 9TH</h1>
+          </section>
+
+          <section>
+            <h2>BihemisphereicDecaoctant Definition</h2>
+            <pre><code data-trim>
+enum BihemisphereicDecaoctant {OffenseRight, OffenseLeft, OffensePost,
+        AlphaOuterRight, AlphaInnerRight, AlphaInnerLeft, AlphaOuterLeft,
+        AlphaNuetralLeft, AlphaNuetralRight, BetaNuetralRight,
+        BetaNuetralLeft, BetaOuterLeft, BetaInnerLeft, BetaInnerRight,
+        BetaOuterRight, DefenseGoal, DefenseLeft, DefenseRight};
+            </code></pre>
+          </section>
+        </section>
+
+        <!-- Conceptual Comparison -->
+        <section>
+          <section>
+            <h2>Serialization</h2>
+            <div class="two-column">
+              <p>
+                <h3>File</h3>
+                <pre><code data-trim>
+{
+  "Name" : "Nick",
+  "GraduationDate" : "5/6/16",
+  "MeetingsAttended" : 30,
+  "BihemisphericDecaoctant"
+    : "AlphaOuterRight"
+}
+                </code></pre>
+              </p>
+            </div>
+            <div class="two-column">
+              <p>
+                <h3>Database</h3>
+                <pre>
++-----+--------+----+----------------+
+|Name |GradDate|M.A.| BhmsphrcDcctnt |
++-----+--------+----+----------------+
+|Nick | 5/6/16 | 30 | AlphaOuterRight|
++-----+--------+----+----------------+
+                </pre>
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <h2>Serialization</h2>
+            <div class="two-column">
+              <p>
+                <h3>File</h3>
+                <pre><code data-trim>
+{
+  "Name" : "Nick",
+  "GraduationDate" : "5/6/16",
+  "MeetingsAttended" : 30,
+  "BihemisphericDecaoctant"
+    : "AlphaOuterRight"
+},
+{
+  "Name" : "Alice",
+  "GraduationDate" : "5/6/16",
+  "MeetingsAttended" : 2,
+  "BihemisphericDecaoctant"
+    : "DefenseGoal"
+}
+                </code></pre>
+              </p>
+            </div>
+            <div class="two-column">
+              <p>
+                <h3>Database</h3>
+                <pre>
++-----+--------+----+----------------+
+|Name |GradDate|M.A.| BhmsphrcDcctnt |
++-----+--------+----+----------------+
+|Nick | 5/6/16 | 30 | AlphaOuterRight|
++-----+--------+----+----------------+
+|Alice| 5/6/18 | 15 |   DefenseGoal  |
++-----+--------+----+----------------+
+                </pre>
+              </p>
+            </div>
+            <aside class="notes">
+              When you want to delete a row, you have to do some crazy shit with the file, or you can let the DB do that
+              for you. It's all the same data, it's just how you look at it.
+            </aside>
+          </section>
+        </section>
+
+        <!-- "How do I Use a Database?" -->
+        <section>
+          <div class="centered-image">
+            <div class="titled-portrait" style="width: 200px; margin: auto;">
+              <img data-src="media/Debbie-Portrait.svg" alt="Y">
+              <small>Yusa "Data" Bass</small>
+            </div>
+          </div>
+          
+          <h2 data-fragment-index="0" class="fragment">"How do I Yusa 'Data' Bass?"</h2>
+
+          <aside class="notes">
+            Debbie knows she wants to get one, but doesn't know how to use it.
+          </aside>
+        </section>
+
+        <!-- How to Use A Database -->
+        <section>
           <section>
             <h2>
-              Network
+              How to Set Up Your Database
             </h2>
-            <pre class="java">
-<code>java.net.*
-android.net.*</code>
-            </pre>
+
+            <div class="two-column">
+              <img data-src="media/WebserverSetup.svg" alt="Webserver Setup"/>
+            </div>
+            <div class="two-column">
+              <img data-src="media/RemoteSetup.svg" alt="Client/Server Setup"/>
+            </div>
+
             <aside class="notes">
-              Not reliable, needs permission.
+              The database is going to be a service that runs on some type of server. In your language there exists at
+              least one library that lets you communicate with a SQL database.
             </aside>
           </section>
 
+          <section>
+            <h2>
+              Connecting to Your Database
+            </h2>
+
+            <pre><code data-trim>
+$databaseObject = new mysqli('lopreiato.us', 'drew',
+    'pa$$w0rd', 'acm_presentation');
+
+Connection conn = DriverManager.getConnection(
+    "jdbc:mysql://lopreiato.us/acm_presentation", "drew", "pa$$w0rd");
+
+MySQL.Data.MySqlClient.MySqlConnection conn;
+conn = new MySql.Data.MySqlClient.MySqlConnection(
+    "server=lopreiato.us;uid=drew;pwd=pa$$w0rd;database=acm_presentation;";
+
+MYSQL *con = mysql_init(NULL);
+mysql_real_connect(con, "lopreiato.us", "drew", "pa$$w0rd",
+    NULL, 0, NULL, 0);
+            </code></pre>
+          </section>
         </section>
 
+        <!-- Basic Operations -->
+        <section>
+          <section>
+            <h2>
+              Basic Operations
+            </h2>
 
+            <table>
+              <tr>
+                <td>Create</td>
+                <td data-fragment-index="0" class="fragment">INSERT</td>
+              </tr>
+              <tr>
+                <td>Read</td>
+                <td data-fragment-index="0" class="fragment">SELECT</td>
+              </tr>
+              <tr>
+                <td>Update</td>
+                <td data-fragment-index="0" class="fragment">UPDATE</td>
+              </tr>
+              <tr>
+                <td>Delete</td>
+                <td data-fragment-index="0" class="fragment">DELETE</td>
+              </tr>
+            </table>
+          </section>
 
-        <!-- Slide 33: Adapters -->
+          <section>
+            <h2>
+              Consider Table "acm_members"
+            </h2>
+            <table>
+              <tr>
+                <th>name</th>
+                <th>graduation</th>
+                <th>meetingsAttended</th>
+                <th>bhmsphrcDcctnt</th>
+              </tr>
+              <tr>
+                <td>Nick</td>
+                <td>2016-05-06</td>
+                <td>30</td>
+                <td>AlphaOuterRight</td>
+              </tr>
+              <tr>
+                <td>Alice</td>
+                <td>2018-05-06</td>
+                <td>15</td>
+                <td>DefenseGoal</td>
+              </tr>
+            </table>
+          </section>
+
+          <section>
+            <pre><code data-trim>
+INSERT INTO acm_members (name, graduation, meetingsAttended, bhmsphrcDcctnt)
+VALUES ('John', '2017-05-06', 0, 'BetaNuetralRight');
+            </code></pre>
+            <table data-fragment-index="0" class="fragment">
+              <tr>
+                <th>name</th>
+                <th>graduation</th>
+                <th>meetingsAttended</th>
+                <th>bhmsphrcDcctnt</th>
+              </tr>
+              <tr>
+                <td>Nick</td>
+                <td>2016-05-06</td>
+                <td>30</td>
+                <td>AlphaOuterRight</td>
+              </tr>
+              <tr>
+                <td>Alice</td>
+                <td>2018-05-06</td>
+                <td>15</td>
+                <td>DefenseGoal</td>
+              </tr>
+              <tr>
+                <td>John</td>
+                <td>2017-05-06</td>
+                <td>0</td>
+                <td>BetaNuetralRight</td>
+              </tr>
+            </table>
+          </section>
+
+          <section>
+            <pre><code data-trim>
+DELETE FROM acm_members
+WHERE name='John';
+            </code></pre>
+            <table data-fragment-index="0" class="fragment">
+              <tr>
+                <th>name</th>
+                <th>graduation</th>
+                <th>meetingsAttended</th>
+                <th>bhmsphrcDcctnt</th>
+              </tr>
+              <tr>
+                <td>Nick</td>
+                <td>2016-05-06</td>
+                <td>30</td>
+                <td>AlphaOuterRight</td>
+              </tr>
+              <tr>
+                <td>Alice</td>
+                <td>2018-05-06</td>
+                <td>15</td>
+                <td>DefenseGoal</td>
+              </tr>
+            </table>
+          </section>
+
+          <section>
+            <pre><code data-trim>
+UPDATE acm_members
+SET meetingsAttended=meetingsAttended-1
+WHERE name='Nick';
+            </code></pre>
+            <table data-fragment-index="0" class="fragment">
+              <tr>
+                <th>name</th>
+                <th>graduation</th>
+                <th>meetingsAttended</th>
+                <th>bhmsphrcDcctnt</th>
+              </tr>
+              <tr>
+                <td>Nick</td>
+                <td>2016-05-06</td>
+                <td>29</td>
+                <td>AlphaOuterRight</td>
+              </tr>
+              <tr>
+                <td>Alice</td>
+                <td>2018-05-06</td>
+                <td>15</td>
+                <td>DefenseGoal</td>
+              </tr>
+            </table>
+          </section>
+
+          <section>
+            <pre><code data-trim>
+SELECT name, graduation
+WHERE meetingsAttended > 0;
+            </code></pre>
+            <p data-fragment-index="0" class="fragment">RETURN VALUE</p>
+            <table data-fragment-index="0" class="fragment">
+              <tr>
+                <th>name</th>
+                <th>graduation</th>
+              </tr>
+              <tr>
+                <td>Nick</td>
+                <td>2016-05-06</td>
+              </tr>
+              <tr>
+                <td>Alice</td>
+                <td>2018-05-06</td>
+              </tr>
+            </table>
+          </section>
+        </section>
+
         <section>
           <h2>
-            Adapters
+            Creating a Table
           </h2>
-          <pre class="stretch java">
-<code>private ListView listView;
-private ArrayList&lt;String&gt; footballGamePlaylist;
-
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-    ...
-
-    // fill data
-    footballGamePlaylist = new ArrayList&lt;String&gt;();
-    for (int i = 0; i &lt; 50; i++) {
-        footballGamePlaylist.add("We Dem Boyz");
-    }
-
-    // prepare adapter
-    ArrayAdapter&lt;String&gt; adapter;
-    adapter = new ArrayAdapter&lt;String&gt;(this, android.R.layout.simple_list_item_1, footballGamePlaylist);
-
-    // connect adapter
-    listView.setAdapter(adapter);
-}
-    </code>
-          </pre>
-          <aside class="notes">
-            This just creates a list of strings. To create your own list, make a custom layout, and extend the adapter
-            class.
-          </aside>
         </section>
 
-        <!-- Slide 34: Java Libraries -->
-        <section>
-          <h2>
-            And don't forget...
-          </h2>
-          <p>
-            Not everything needs to extend an Android class.
-          </p>
-          <aside class="notes">
-            The best code separates functionality, so be sure to keep doing that.
-          </aside>
-        </section>
+        <!-- Note for myself:
+          At this point, we've basically established that a database is like a fancy spreadsheet. We've explained how to
+          do basic SQL queries. We need to fit in datatypes, and weird SQL syntax. -->
 
-
-        <!-- Slide 35: Manifest -->
-        <section>
-          <h2>
-            The Manifest
-          </h2>
-          <pre class="stretch xml" style="width: 100%;">
-<code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    package=&quot;us.lopreiato.acm_presentation&quot; &gt;
-
-    &lt;application
-        android:allowBackup=&quot;true&quot;
-        android:icon=&quot;@drawable/ic_launcher&quot;
-        android:label=&quot;@string/app_name&quot;
-        android:theme=&quot;@style/AppTheme&quot; &gt;
-        &lt;activity
-            android:name=&quot;.MainACMActivity&quot;
-            android:label=&quot;@string/app_name&quot; &gt;
-            &lt;intent-filter&gt;
-                &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
-
-                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
-            &lt;/intent-filter&gt;
-        &lt;/activity&gt;
-    &lt;/application&gt;
-&lt;/manifest&gt;
-</code>
-          </pre>
-          <aside class="notes">
-            And this is it. This is all you need to know.
-            <br />
-            Simple but important. Tells the OS what you want to do, and how it should interact with your app.
-            <br />
-            Also can declare a use of a feature, library, or permission. Declare as a service.
-          </aside>
-        </section>
-
-
-        <!-- Slide 36:Finishing Slide -->
+        <!-- Finishing Slide -->
         <section>
           <h1>
             Thank you
