@@ -165,8 +165,8 @@
         <section>
           <div class="centered-image">
             <div class="titled-portrait" style="width: 200px; margin: auto;">
-              <img data-src="media/Debbie-Portrait.svg" alt="Y">
-              <small>Yalenchka 'Y' Burdukovsky</small>
+              <img data-src="media/Yalenchka-Portrait.svg" alt="Y">
+              <small>Yalenchka 'Y' Burdukovskychev</small>
             </div>
           </div>
           
@@ -213,7 +213,7 @@
         <section>
           <div class="centered-image">
             <div class="titled-portrait" style="width: 200px; margin: auto;">
-              <img data-src="media/Debbie-Portrait.svg" alt="Y">
+              <img data-src="media/Walt-Portrait.svg" alt="Y">
               <small>Walt Isa</small>
             </div>
           </div>
@@ -378,7 +378,7 @@ enum BihemisphereicDecaoctant {OffenseRight, OffenseLeft, OffensePost,
         <section>
           <div class="centered-image">
             <div class="titled-portrait" style="width: 200px; margin: auto;">
-              <img data-src="media/Debbie-Portrait.svg" alt="Y">
+              <img data-src="media/Yusa-Portrait.svg" alt="Y">
               <small>Yusa "Data" Bass</small>
             </div>
           </div>
@@ -598,18 +598,211 @@ WHERE meetingsAttended > 0;
         </section>
 
         <section>
-          <h2>
-            Creating a Table
-          </h2>
+          <section>
+            <h2>
+              Designing Our Trivia Game
+            </h2>
 
+            <ul data-fragment-index="0" class="fragment">
+              <li>Sign In</li>
+              <li>Answer Questions</li>
+              <li>See a Leader Board</li>
+            </ul>
+            <aside class="notes">
+              I would go over common database solutions, but it's helpful to know where these came from. So let's design our game real fast.
+              <br />
+              Users will register by putting in their name
+              <br />
+              Let users answer questions until they get their first one wrong, and then compare scores on a leader board.
+              <!-- For populating this table, username comes from first_name, password comes from fruit, score comes from
+              the day in their favorite date, if they are finished comes from likes_fotball -->
+            </aside>
+          </section>
+
+          <section>
+            <h2>
+              Designed In Java
+            </h2>
+            <pre><code data-trim>
+class User {
+  string Name;
+  int Score;
+}
+            </code></pre>
+            <pre><code data-trim>
+class Question {
+  string Question;
+  string Answer;
+}
+            </pre></code>
+            <pre><code data-trim>
+class Game {
+  ArrayList&lt;User&gt; Users;
+  ArrayList&lt;Question&gt; Questions;
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>
+              Designed In SQL
+            </h2>
+            <table class="two-column">
+              <tr>
+                <th>Name</th>
+                <th>Score</th>
+              </tr>
+              <tr data-fragment-index="0" class="fragment">
+                <td>varchar(32)</td>
+                <td>int(10)</td>
+              </tr>
+            </table>
+            <table>
+              <tr>
+                <th>Question</th>
+                <th>Answer</th>
+              </tr>
+              <tr data-fragment-index="0" class="fragment">
+                <td>varchar(128)</td>
+                <td>varchar(32)</td>
+              </tr>
+            </table>
+            <aside class="notes">
+              Show user table. Attempt to update scores of people named will. trivia_users_0
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <div data-fragment-index="0" class="centered-image fragment">
+            <div class="titled-portrait" style="width: 200px; margin: auto;">
+              <img data-src="media/Fiona-Portrait.svg" alt="Fiona">
+              <small>Fiona Keys</small>
+            </div>
+          </div>
+          <aside class="notes">
+            See's a girl she recognizes to be good at databases. Calls Fiona over.
+          </aside>
+        </section>
+
+        <section>
+          <h2>
+            Primary Keys
+          </h2>
+          <p data-fragment-index="0" class="fragment">
+            Has to be Unique
+          </p>
+          <p data-fragment-index="1" class="fragment">
+            Data is Clustered Based on this Value
+          </p>
+          <aside class="notes">
+            Essentially assigned it an index, because fast retreival, and unique key. Revisit trying to update scores of will. trivia_1
+            <br />
+            Don't forget to show auto_increment
+          </aside>
+        </section>
+
+        <section>
+          <h2>
+            User Feedback!
+          </h2>
           <p>
-            
+            <small data-fragment-index="0" class="fragment">
+              "Wow! This app is fun, but how am I am supposed to know about all this random stuff? I only got 3."
+            </small>
+            <small data-fragment-index="1" class="fragment">
+              "Jeez, I wish I could at least have a chance at some of these questions."
+            </small>
+            <small data-fragment-index="2" class="fragment">
+              "GG2EZ SCRUBLORDS. GET REKT M8! LOLOLOLOL"
+            </small>
           </p>
         </section>
 
-        <!-- Note for myself:
-          At this point, we've basically established that a database is like a fancy spreadsheet. We've explained how to
-          do basic SQL queries. We need to fit in datatypes, and weird SQL syntax. -->
+        <section>
+          <div class="centered-image">
+            <div class="titled-portrait" style="width: 200px; margin: auto;">
+              <img data-src="media/Fiona-Portrait.svg" alt="Y">
+              <small>F. "Orin" Keys</small>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>
+            Foreign Keys
+          </h2>
+        </section>
+
+
+        <section>
+          <h2>
+            Foreign Keys
+          </h2>
+          <ul data-fragment-index="0" class="fragment">
+            <li>Save Space</li>
+            <li>Easy Updates</li>
+            <li>Keep All Values in One Spot</li>
+          </ul>
+          <aside class="notes">
+            Remember how we asigned everything a Unique ID? Just reference that someone where else.
+            <br />
+            We're now on trivia_2
+          </aside>
+          <!--
+          For getting the requested questions
+          SELECT * FROM trivia_questions_2 WHERE category=2
+          Good idea: Index the category.
+
+          For showing users scores relevant to you.
+          SELECT * FROM trivia_users_2 WHERE category=2 && score >= 0
+
+          For display the list of categories
+          SELECT * FROM trivia_categories_2 ORDER BY display_order ASC
+          -->
+        </section>
+
+        <section>
+          <h2>
+            Storing Collections
+          </h2>
+          <aside class="notes">
+            trivia_3
+          </aside>
+          <!-- Show which categories a user has goten on a score -->
+          <!--
+            For getting if the user has submitted a score or not yet for that category:
+            SELECT score FROM trivia_scores_3 WHERE user_id=6
+
+            For getting the ids of the other users who did something in that category:
+            SELECT user_id FROM trivia_scores_3 WHERE category_id=2
+          -->
+        </section>
+
+        <section>
+          <h2>
+            Security
+          </h2>
+          <!-- Debbie wants to create a log in system and hold passwords -->
+        </section>
+
+        <section>
+          <!-- OH NOES! THE DATA DISAPPEARED -->
+          <h2>
+            Sanitizing Input
+          </h2>
+          <!-- Don't know how I'm going to make this fit, but you need to sanitie input before you query your DB -->
+        </section>
+
+        <section>
+          <!-- Debbie notices that her program queries the database a lot -->
+          Joins
+        </section>
+
+        <section>
+          aggregations
+          <!-- Debbie wants to take some statistics-->
+        </section>
 
         <!-- Finishing Slide -->
         <section>
@@ -623,6 +816,9 @@ WHERE meetingsAttended > 0;
           </p>
           <p class="fragment" data-fragment-index="1">
             Made with <a href="https://github.com/hakimel/reveal.js">reveal.js</a>
+          </p>
+          <p class="fragment" data-fragment-index="2">
+            Character Design by <a href="https://github.com/CarpeDiEmma">Emma</a>
           </p>
         </section>
 
