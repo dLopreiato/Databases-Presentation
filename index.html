@@ -164,7 +164,7 @@
         <!-- "Why do I need a database?" -->
         <section>
           <div class="centered-image">
-            <div class="titled-portrait" style="width: 200px; margin: auto;">
+            <div class="titled-portrait" style="width: 400px; margin: auto;">
               <img data-src="media/Yalenchka-Portrait.svg" alt="Y">
               <small>Yalenchka 'Y' Burdukovskychev</small>
             </div>
@@ -212,7 +212,7 @@
         <!-- "What is a Database?" -->
         <section>
           <div class="centered-image">
-            <div class="titled-portrait" style="width: 200px; margin: auto;">
+            <div class="titled-portrait" style="width: 400px; margin: auto;">
               <img data-src="media/Walt-Portrait.svg" alt="Y">
               <small>Walt Isa</small>
             </div>
@@ -377,7 +377,7 @@ enum BihemisphereicDecaoctant {OffenseRight, OffenseLeft, OffensePost,
         <!-- "How do I Use a Database?" -->
         <section>
           <div class="centered-image">
-            <div class="titled-portrait" style="width: 200px; margin: auto;">
+            <div class="titled-portrait" style="width: 400px; margin: auto;">
               <img data-src="media/Yusa-Portrait.svg" alt="Y">
               <small>Yusa "Data" Bass</small>
             </div>
@@ -675,7 +675,7 @@ class Game {
 
         <section>
           <div data-fragment-index="0" class="centered-image fragment">
-            <div class="titled-portrait" style="width: 200px; margin: auto;">
+            <div class="titled-portrait" style="width: 400px; margin: auto;">
               <img data-src="media/Fiona-Portrait.svg" alt="Fiona">
               <small>Fiona Keys</small>
             </div>
@@ -721,7 +721,7 @@ class Game {
 
         <section>
           <div class="centered-image">
-            <div class="titled-portrait" style="width: 200px; margin: auto;">
+            <div class="titled-portrait" style="width: 400px; margin: auto;">
               <img data-src="media/Fiona-Portrait.svg" alt="Y">
               <small>F. "Orin" Keys</small>
             </div>
@@ -748,6 +748,8 @@ class Game {
             Remember how we asigned everything a Unique ID? Just reference that someone where else.
             <br />
             We're now on trivia_2
+            <br />
+            SEGUE: Now she wants to let users complete mutliple categories under the same name.
           </aside>
           <!--
           For getting the requested questions
@@ -763,43 +765,215 @@ class Game {
         </section>
 
         <section>
-          <h2>
-            Storing Collections
-          </h2>
-          <aside class="notes">
-            trivia_3
-          </aside>
-          <!-- Show which categories a user has goten on a score -->
-          <!--
+          <section>
+            <h2>
+              Storing Arrays
+            </h2>
+            <p data-fragment-index="0" class="fragment">
+              For storing data in the...
+            </p>
+          </section>
+          <section>
+            <h1>SECOND DIMENSION</h1>
+          </section>
+
+          <section>
+            <pre><code data-trim>
+class CategoryScore {
+  int Category; // the primary key of the category
+  int Score; // the score the user earned
+}
+            </code></pre>
+            <pre><code data-trim>
+class Person {
+  int ID;
+  string name;
+  ArrayList&lt;CategoryScore&gt; Scores;
+}
+            </code></pre>
+            <pre><code data-trim>
+class Game {
+  ArrayList&lt;Person&gt; Users;
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Mapping Table</h2>
+            <aside class="notes">
+              trivia_3
+              <br />
+              Unique on 2 columns
+              <br />
+              Almost entirely foreign keys
+              <br />
+              SEGUE: Let's make a log in system.
+            </aside>
+            <!--
             For getting if the user has submitted a score or not yet for that category:
             SELECT score FROM trivia_scores_3 WHERE user_id=6
 
             For getting the ids of the other users who did something in that category:
             SELECT user_id FROM trivia_scores_3 WHERE category_id=2
           -->
+          </section>
+        </section>
+
+        <section>
+          <div class="centered-image">
+            <div class="titled-portrait" style="width: 400px; margin: auto;">
+              <img data-src="media/Seth-Portrait.svg" alt="Y">
+              <small>Seth Querity</small>
+            </div>
+          </div>
+
+          <h2 data-fragment-index="0" class="fragment">
+            "Sounds like you need help with Seth Querity!"
+        </section>
+
+        <section>
+          <section>
+            <h2>Log In Systems</h2>
+            <p data-fragment-index="0" class="fragment">
+              1.) Username should be unique
+            </p>
+          </section>
+
+          <section>
+            <h2>FOR THE LOVE OF ALL THAT IS HOLY</h2>
+          </section>
+
+          <section>
+            <h2>DO NOT STORE PASSWORDS AS PLAIN TEXT</h2>
+          </section>
+
+          <section><h2>EVER</h2></section>
+
+          <section><h2>EVER</h2></section>
+          <section><h2>EVER</h2></section>
+          <section><h2>EVER</h2></section>
+          <section><h2>EVER</h2></section>
+          <section><h2>EVER</h2></section>
+        </section>
+
+        <section>
+          <h2>Password Hashing!</h2>
+
+          <pre><code data-trim>
+function Register(string Username, string Password) {
+  string HashValue = hash(Password);
+
+  string registerUserQuery = "INSERT INTO users (username, password)" +
+    "VALUES ('" + Username + "', '" + "HashValue');";
+
+  SqlConnection.query(registerUserQuery);
+}
+          </code></pre>
+
+          <pre data-fragment-index="0" class="fragment"><code data-trim>
+INSERT INTO users (username, hashed_password)
+VALUES ('Seth', '0421008445828ceb46f496700a5fa65e');
+          </code></pre>
+          <!-- His password is 'poop' for those curious. -->
+          <aside class="notes">
+            Asymmetrical Hashing Algorithm
+            <br />
+            trivia_4
+          </aside>
+        </section>
+
+        <section>
+          <h2>How do I Authenticate?</h2>
+
+          <pre><code data-trim>
+function boolean Authenticate(string Username, string Password) {
+  string HashValue = hash(Password);
+
+  string authQuery = "SELECT * FROM trivia_users WHERE username='" + username
+    + "' AND hashed_password='" + HashValue + "'";
+
+  SqlResult userSelect = SqlConnection.query(authQuery);
+
+  return userSelect.num_rows > 0;
+}
+          </code></pre>
+
+          <pre data-fragment-index="0" class="fragment"><code data-trim>
+SELECT * FROM trivia_users 
+WHERE username='Seth' AND hashed_password='0421008445828ceb46f496700a5fa65e';
+          </code></pre>
+        </section>
+
+        <section>
+          <div data-fragment-index="0" class="fragment" style="float: left;">
+              <img style="vertical-align: middle;" data-src="media/Seth-Portrait.svg" alt="Y">
+              "2:23 Breh!"
+          </div>
+          <br />
+          <div data-fragment-index="1" class="fragment" style="float:right;">
+            "THE SHOW CASE STARTS IN 7 MINUTES!"
+            <img style="vertical-align: middle;" data-src="media/Debbie-Portrait.svg" alt="Debbie">
+          </div>
         </section>
 
         <section>
           <h2>
-            Security
+            The Database is empty.
           </h2>
-          <!-- Debbie wants to create a log in system and hold passwords -->
+
+          <p data-fragment-index="0" class="fragment">How?</p>
+          <p data-fragment-index="3" class="fragment">A SQL Injection</p>
+          <p data-fragment-index="1" class="fragment">Why?</p>
+          <p data-fragment-index="4" class="fragment">Someone wanted to break your project</p>
+          <p data-fragment-index="2" class="fragment">Who?</p>
+          <p data-fragment-index="5" class="fragment">Arun.</p>
         </section>
 
         <section>
-          <!-- OH NOES! THE DATA DISAPPEARED -->
-          <h2>
-            Sanitizing Input
-          </h2>
-          <!-- Don't know how I'm going to make this fit, but you need to sanitie input before you query your DB -->
+          Show how a sql injection works
         </section>
 
         <section>
+          <h2>Always Use Protection</h2>
+
+          <p data-fragment-index="0" class="fragment">Determine What's Valid</p>
+
+          <ul data-fragment-index="1" class="fragment">
+            <li>Deny All Unacceptable Strings</li>
+            <li>Escape All Strings Before Entry to Database</li>
+            <li>Escape All Strings Before Display on Webpage</li>
+          </ul>
+          <br />
+          <br />
+          <table data-fragment-index="2" class="fragment">
+            <tr>
+              <td data-fragment-index="2" class="fragment">What is you're name?</td>
+              <td data-fragment-index="3" class="fragment">What is you\'re name?</td>
+            </tr>
+            <tr>
+              <td data-fragment-index="2" class="fragment">Who's dog is this?</td>
+              <td data-fragment-index="3" class="fragment">Who\'s dog is this?</td>
+            </tr>
+            <tr>
+              <td data-fragment-index="2" class="fragment">All my corgi's are brown.</td>
+              <td data-fragment-index="3" class="fragment">All my corgi\'s are brown.</td>
+            </tr>
+          </table>
+        </section>
+
+        <section>
+          Debbie wins gold because her game is so amazing.
+        </section>
+
+        <section>
+          because debbie is a good student, she tries to make her slow game run faster
           <!-- Debbie notices that her program queries the database a lot -->
           Joins
         </section>
 
         <section>
+          Wants to speed up overall scores/show stats
+
           aggregations
           <!-- Debbie wants to take some statistics-->
         </section>
@@ -812,7 +986,7 @@ class Game {
           <p class="fragment" data-fragment-index="0">
             Visit my Github for the source where I left more comments.
             <br />
-            <small><a href="http://github.com/dLopreiato">http://github.com/dLopreiato</a></small>
+            <small><a href="https://github.com/dLopreiato">http://github.com/dLopreiato</a></small>
           </p>
           <p class="fragment" data-fragment-index="1">
             Made with <a href="https://github.com/hakimel/reveal.js">reveal.js</a>
