@@ -627,15 +627,11 @@ WHERE meetingsAttended > 0;
 class User {
   string Name;
   int Score;
-}
-            </code></pre>
-            <pre><code data-trim>
+}</code><code data-trim>
 class Question {
   string Question;
   string Answer;
-}
-            </pre></code>
-            <pre><code data-trim>
+}</code><code data-trim>
 class Game {
   ArrayList&lt;User&gt; Users;
   ArrayList&lt;Question&gt; Questions;
@@ -723,17 +719,10 @@ class Game {
           <div class="centered-image">
             <div class="titled-portrait" style="width: 400px; margin: auto;">
               <img data-src="media/Fiona-Portrait.svg" alt="Y">
-              <small>F. "Orin" Keys</small>
+              <small>F. Orin Keys</small>
             </div>
           </div>
         </section>
-
-        <section>
-          <h2>
-            Foreign Keys
-          </h2>
-        </section>
-
 
         <section>
           <h2>
@@ -782,16 +771,12 @@ class Game {
 class CategoryScore {
   int Category; // the primary key of the category
   int Score; // the score the user earned
-}
-            </code></pre>
-            <pre><code data-trim>
+}</code><code data-trim>
 class Person {
   int ID;
   string name;
   ArrayList&lt;CategoryScore&gt; Scores;
-}
-            </code></pre>
-            <pre><code data-trim>
+}</code><code data-trim>
 class Game {
   ArrayList&lt;Person&gt; Users;
 }
@@ -872,7 +857,7 @@ function Register(string Username, string Password) {
 
           <pre data-fragment-index="0" class="fragment"><code data-trim>
 INSERT INTO users (username, hashed_password)
-VALUES ('Seth', '0421008445828ceb46f496700a5fa65e');
+VALUES ('Seth', 'aa21e1e64b5ca4f6e7bd20ed945b8b79');
           </code></pre>
           <!-- His password is 'poop' for those curious. -->
           <aside class="notes">
@@ -900,7 +885,7 @@ function boolean Authenticate(string Username, string Password) {
 
           <pre data-fragment-index="0" class="fragment"><code data-trim>
 SELECT * FROM trivia_users 
-WHERE username='Seth' AND hashed_password='0421008445828ceb46f496700a5fa65e';
+WHERE username='Seth' AND hashed_password='aa21e1e64b5ca4f6e7bd20ed945b8b79';
           </code></pre>
         </section>
 
@@ -930,7 +915,34 @@ WHERE username='Seth' AND hashed_password='0421008445828ceb46f496700a5fa65e';
         </section>
 
         <section>
-          Show how a sql injection works
+          <section>
+            <h2>A SQL Injection</h2>
+            <pre data-fragment-index="0" class="fragment"><code data-trim>
+function Register(string Username, string Password) {
+  string HashValue = hash(Password);
+
+  string registerUserQuery = "INSERT INTO users (username, password)" +
+    "VALUES ('" + Username + "', '" + "HashValue');";
+
+  SqlConnection.query(registerUserQuery);
+}
+            </code></pre>
+
+            <pre data-fragment-index="0" class="fragment"><code data-trim>
+Register("Seth", "PurpleMonkeyDishwasher");</code><code data-trim>
+INSERT INTO users (username, hashed_password)
+VALUES ('Seth', 'aa21e1e64b5ca4f6e7bd20ed945b8b79');
+            </code></pre>
+          </section>
+
+          <section>
+            <pre><code data-trim>
+void Register("Seth', ''); DROP TABLE trivia_questions; --", "LOLHAX");
+</code><code data-trim data-fragment-index="0" class="fragment">
+INSERT INTO users (username, hashed_password)
+VALUES ('Seth', ''); DROP TABLE trivia_questions; --', '6978ab23a8f309433addd76793a55ddf');
+            </code></pre>
+          </section>
         </section>
 
         <section>
@@ -962,20 +974,206 @@ WHERE username='Seth' AND hashed_password='0421008445828ceb46f496700a5fa65e';
         </section>
 
         <section>
-          Debbie wins gold because her game is so amazing.
+          <h2>A Failed SQL Injection</h2>
+            <pre><code data-trim class="java">
+void Register(string Username, string Password) {
+  // ...
+  Username.replace("'", "\'");
+  // ...
+}
+            </code></pre>
+            <pre data-trim data-fragment-index="0" class="fragment"><code data-trim>
+void Register("Seth', ''); DROP TABLE trivia_questions; --", "LOLHAX");
+</code><code data-trim data-fragment-index="1" class="fragment">
+INSERT INTO users (username, hashed_password)
+VALUES ('Seth\', \'\'); DROP TABLE trivia_questions; --', '6978ab23a8f309433addd76793a55ddf');
+            </code></pre>
         </section>
 
         <section>
-          because debbie is a good student, she tries to make her slow game run faster
-          <!-- Debbie notices that her program queries the database a lot -->
-          Joins
+          <h2>The Results are In...</h2>
+          <h2 data-trim data-fragment-index="0" class="fragment">In First place...</h2>
         </section>
 
         <section>
-          Wants to speed up overall scores/show stats
+          <h2>DEBBIE DAY TAYBASS</h2>
+          <div class="centered-image">
+            <div class="titled-portrait" style="width: 400px; margin: auto;">
+              <img data-src="media/Debbie-Portrait.svg" alt="Y">
+            </div>
+          </div>
+          <p data-fragment-index="0" class="fragment">But our story doesn't end here.</p>
+        </section>
 
-          aggregations
-          <!-- Debbie wants to take some statistics-->
+        <section>
+          <div class="centered-image">
+            <div class="titled-portrait" style="width: 400px; margin: auto;">
+              <img data-src="media/Vance-Portrait.svg" alt="Y">
+              <small>Ad. Vance Seaqual-Kweries</small>
+            </div>
+          </div>
+          <h2 data-fragment-index="0" class="fragment">
+            "Can you help me optimize my game with Ad. Vance Seaqual-Kweries?"
+          </h2>
+        </section>
+
+        <section>
+          <h2>The High Score Table</h2>
+          <pre><code data-trim class="java">
+ArrayList&lt;Triple&lt;String, Category, int&gt;&gt; GetHighScoreTable(int UserScore, int Radius) {
+    ArrayList&lt;Triple&lt;String, Category, int&gt;&gt; highScoreTable =
+      new ArrayList&lt;Triple&lt;String, Category, int&gt;&gt;();
+
+    int UpperBound = UserScore + Radius;
+    int LowerBound = UserScore - Radius;
+
+    String selectScoresQuery = "SELECT * FROM trivia_scores WHERE score&lt;=" + UpperBound
+      + " AND score&gt;=" + LowerBound + ";";
+    SqlResult nearbyScores = SqlConnection.query(selectScoresQuery);
+
+    String selectCategoriesQuery = "SELECT * FROM trivia_categories;";
+    SqlResult categories = SqlConnection.query(selectCategoriesQuery);
+
+    foreach (Score in nearbyScores) {
+      String getUserNameQuery = "SELECT first_name FROM triva_users WHERE id=" + Score.user_id + ";";
+
+      SqlResult userName = SqlConnection.query(getUserNameQuery);
+
+      String category = categories[Score.category_id];
+
+      highScoreTable.add(new Triple(userName.first_name, category, Score.score));
+    }
+
+    return highScoreTable;
+}
+          </code></pre>
+          <aside class="notes">
+            Segue: all of this can be done in 1 query.
+          </aside>
+          <!-- 
+            SELECT 
+            tus.name
+            tcg.category
+            tcs.score
+            FROM trivia_scores tsc
+            INNER JOIN trivia_users tus
+            ON tsc.user_id=tus.id
+            INNER JOIN trivia_categories tcg
+            ON tsc.category_id=tcg.id
+            WHERE tcs.score <= UpperBound
+            AND tcs.score >= LowerBound;
+        -->
+        </section>
+
+        <section>
+          <section>
+            <h2>Joins</h2>
+            <aside class="notes">
+              Our current model is a bit complex, so let's head to the survey you took.
+            </aside>
+          </section>
+
+          <section>
+            <h2>Inner Join</h2>
+            <div class="centered-image">
+              <div class="titled-portrait" style="width: 400px; margin: auto;">
+                <img data-src="media/Inner-Join.svg" alt="Inner Join">
+              </div>
+            </div>
+            <p>
+              <small>Excludes any non-matched data</small>
+            </p>
+          </section>
+
+          <section>
+            <h2>Left Join</h2>
+            <div class="centered-image">
+              <div class="titled-portrait" style="width: 400px; margin: auto;">
+                <img data-src="media/Left-Join.svg" alt="Left Join">
+              </div>
+            </div>
+            <p>
+              <small>Guarantees the existance of every row from the left</small>
+              <br />
+              <small>Anything unmatched will be given value <em>NULL</em></small>
+            </p>
+          </section>
+
+          <section>
+            <h2>Right Join</h2>
+            <div class="centered-image">
+              <div class="titled-portrait" style="width: 400px; margin: auto;">
+                <img data-src="media/Right-Join.svg" alt="Right Join">
+              </div>
+            </div>
+            <p>
+              <small>Guarantees the existance of every row from the right</small>
+              <br />
+              <small>Anything unmatched will be given value <em>NULL</em></small>
+            </p>
+          </section>
+
+          <section>
+            <h2>Full/Outer Join</h2>
+            <div class="centered-image">
+              <div class="titled-portrait" style="width: 400px; margin: auto;">
+                <img data-src="media/Outer-Join.svg" alt="Outer Join">
+              </div>
+            </div>
+            <p>
+              <small>Guarantees the existance of every row</small>
+              <br />
+              <small>Anything unmatched will be given value <em>NULL</em></small>
+            </p>
+            <aside class="notes">
+              What place is Debbie in?
+            </aside>
+          </section>
+        </section>
+
+
+        <section>
+          <h2>Calculating Ranking</h2>
+          <pre><code data-trim class="java">
+int GetRank(int UserScore, int Category) {
+  String selectUsersQuery = "SELECT user_id FROM trivia_scores WHERE score &lt;= "
+    + UserScore + " AND category_id=" + Category + ";";
+
+  SqlResult betterUsers = SqlConnection.query(selectUsersQuery);
+
+  int count = 0;
+  foreach (User in BetterUsers) {
+    count++;
+  }
+
+  return count;
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Aggregations</h2>
+
+          <pre data-fragment-index="0" class="fragment"><code data-trim>
+SELECT count(*)
+FROM trivia_scores
+WHERE category_id=5;
+          </code></pre>
+
+          <!--
+          SELECT count(*),
+          category_id
+          FROM trivia_scores
+          GROUP BY category_id -->
+
+          <!--
+          SELECT state,
+          sum(likes_football) as 'Football Fans',
+          avg(length(fruit)) as 'Average Fruit Length'
+          FROM `survey`
+          GROUP BY state -->
+
+          <p data-fragment-index="2" class="fragment">Returns 1 Row</p>
         </section>
 
         <!-- Finishing Slide -->
