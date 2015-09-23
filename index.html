@@ -77,20 +77,20 @@
               <img data-src="media/Walt-Portrait.svg" alt="Walt">
               <small>Walt</small>
             </div>
-            <div class="titled-portrait prologue-portraits fragment" data-fragment-index="1">
-              <img data-src="media/Yalenchka-Portrait.svg" alt="Yalenchka">
-              <small>Yalenchka</small>
-            </div>
             <div class="titled-portrait prologue-portraits fragment" data-fragment-index="0">
               <img data-src="media/Debbie-Portrait.svg" alt="Debbie">
               <small>Debbie Day Taybass</small>
             </div>
             <div class="titled-portrait prologue-portraits fragment" data-fragment-index="1">
-              <img data-src="media/Fiona-Portrait.svg" alt="Fiona">
-              <small>Fiona</small>
+              <img data-src="media/Yalenchka-Portrait.svg" alt="Yalenchka">
+              <small>Yalenchka</small>
             </div>
           </p>
           <p>
+            <div class="titled-portrait prologue-portraits fragment" data-fragment-index="1">
+              <img data-src="media/Fiona-Portrait.svg" alt="Fiona">
+              <small>Fiona</small>
+            </div>
             <div class="titled-portrait prologue-portraits fragment" data-fragment-index="1">
               <img data-src="media/Yusa-Portrait.svg" alt="Yusa">
               <small>Yusa</small>
@@ -98,10 +98,6 @@
             <div class="titled-portrait prologue-portraits fragment" data-fragment-index="1">
               <img data-src="media/Seth-Portrait.svg" alt="Seth">
               <small>Seth</small>
-            </div>
-            <div class="titled-portrait prologue-portraits fragment" data-fragment-index="1">
-              <img data-src="media/Noah-Portrait.svg" alt="Noah">
-              <small>Noah</small>
             </div>
             <div class="titled-portrait prologue-portraits fragment" data-fragment-index="1">
               <img data-src="media/Vance-Portrait.svg" alt="Vance">
@@ -134,11 +130,6 @@
                 <li data-fragment-index="1" class="fragment">Security Practices</li>
                 <li data-fragment-index="1" class="fragment">Advanced SQL Queries</li>
                 <li data-fragment-index="1" class="fragment">Other Database Types</li>
-                <ul data-fragment-index="1" class="fragment">
-                  <li>NoSQL</li>
-                  <li>Postgres</li>
-                  <li>Hadoop</li>
-                </ul>
               </ul>
             </p>
           </section>
@@ -157,6 +148,9 @@
             <p data-fragment-index="2" class="fragment">
               "God, when is this over?"
             </p>
+            <aside class="notes">
+              Debbie doesn't know where to begin. She see's her friend
+            </aside>
           </section>
         </section>
 
@@ -173,7 +167,7 @@
           <h2 data-fragment-index="0" class="fragment">"Y, Why do I need a database?"</h2>
 
           <aside class="notes">
-            Debbie wants to build trivia, doesn't know where to begin. Y suggests she looks up databases.
+            Y suggests she looks up databases.
             Debbie asks why.
           </aside>
         </section>
@@ -713,6 +707,11 @@ class Game {
               "GG2EZ SCRUBLORDS. GET REKT M8! LOLOLOLOL"
             </small>
           </p>
+          <aside class="notes">
+            Fiona (Uncomfortable)
+            <br />
+            I want to add categories to make this easier. Do I just add a new text column?
+          </aside>
         </section>
 
         <section>
@@ -849,7 +848,7 @@ function Register(string Username, string Password) {
   string HashValue = hash(Password);
 
   string registerUserQuery = "INSERT INTO users (username, password)" +
-    "VALUES ('" + Username + "', '" + "HashValue');";
+    "VALUES ('" + Username + "', '" + HashValue + "');";
 
   SqlConnection.query(registerUserQuery);
 }
@@ -1192,6 +1191,15 @@ WHERE category_id=5;
           <p class="fragment" data-fragment-index="2">
             Character Design by <a href="https://github.com/CarpeDiEmma">Emma</a>
           </p>
+        </section>
+
+        <section>
+          <h3>In loving memory of Noah Sequil</h3>
+          <div class="centered-image">
+              <div class="titled-portrait" style="width: 400px; margin: auto;">
+                <img data-src="media/Noah-Portrait.svg" alt="Noah">
+              </div>
+            </div>
         </section>
 
       </div>    <!-- end div="slides" -->
